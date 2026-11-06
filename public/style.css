@@ -1,0 +1,300 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:
+    radial-gradient(circle at top left, #2563eb 0%, transparent 35%),
+    radial-gradient(circle at bottom right, #9333ea 0%, transparent 40%),
+    linear-gradient(135deg, #0f172a, #1e1b4b);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Main container */
+.container {
+    background: rgba(15, 23, 42, 0.72);
+    padding: 40px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(99, 102, 241, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Heading styles */
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 2.2em;
+}
+
+.description {
+    text-align: center;
+    color: #cfc4c4;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* Input group styling */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #9a7575;
+}
+
+/* Password input styling */
+input[type="password"], 
+input[type="text"] {
+    width: 100%;
+    padding: 15px 50px 15px 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: monospace;
+}
+
+input:focus {
+    border-color: #4559b2;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Toggle button styling */
+.toggle-btn {
+    position: absolute;
+    right: 15px;
+    top: 70%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #9f9d9d;
+}
+
+/* Strength meter styling */
+.strength-meter {
+    height: 12px;
+    background: #a49898;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 1px solid #6d6d6d;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: all 0.4s ease;
+    border-radius: 6px;
+    position: relative;
+}
+
+.strength-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Strength text styling */
+.strength-text {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+}
+
+/* Requirements section */
+.requirements {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #e0e5eb;
+    border-radius: 12px;
+    border: 1px solid #14304b;
+}
+
+.requirements h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.requirements ul {
+    list-style: none;
+}
+
+.requirements li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 35px;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+}
+
+.requirements li:before {
+    content: "✗";
+    position: absolute;
+    left: 0;
+    color: #dc3545;
+    font-weight: bold;
+    font-size: 1.2em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.requirements li.valid {
+    color: #28a745;
+}
+
+.requirements li.valid:before {
+    content: "✓";
+    color: #28a745;
+}
+
+/* Tips section */
+.tips {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #95a9affb;
+    border-radius: 12px;
+    border: 1px solid #0d373d;
+}
+
+.tips h3 {
+    color: #137070;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.tips ul {
+    list-style: none;
+}
+
+.tips li {
+    padding: 6px 0;
+    position: relative;
+    padding-left: 25px;
+    font-size: 0.9em;
+    color: #0c5460;
+}
+
+.tips li:before {
+    content: "💡";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Firebase status */
+.firebase-status {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background: #f4f3f2;
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    color: #f8faf9;
+}
+
+/* Strength level colors */
+.very-weak { 
+    background: linear-gradient(90deg, #dc3545, #c82333);
+}
+
+.weak { 
+    background: linear-gradient(90deg, #fd7e14, #e55100);
+}
+
+.fair { 
+    background: linear-gradient(90deg, #ffc107, #ff8f00);
+}
+
+.good { 
+    background: linear-gradient(90deg, #20c997, #17a2b8);
+}
+
+.strong { 
+    background: linear-gradient(90deg, #28a745, #20c997);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .description {
+        font-size: 1em;
+    }
+    
+    input[type="password"], 
+    input[type="text"] {
+        padding: 12px 45px 12px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .container {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .toggle-btn {
+        display: none;
+    }
+}
